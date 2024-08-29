@@ -3,17 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Page</title>
+    <title>Simple HTML Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to My Website</h1>
-    <p>This is a simple welcome page.</p>
+    <header>
+        <h1>Welcome to My Website</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="https://harinisekar05.github.io/hp/Portfolio.html">Portfolio</a></li> <!-- Link to port.html -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Home Page Content</h2>
+        <p>This is the content of the home page.</p>
+        <p>Check out my <a href="Portfolio.html">portfolio</a> for more details.</p> <!-- Another link to port.html -->
+    </main>
+
+    <footer>
+        <p>&copy; 2024 All rights reserved.</p>
+    </footer>
 </body>
 </html>
