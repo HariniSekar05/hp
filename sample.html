@@ -48,84 +48,63 @@
             padding-bottom: 10px;
             margin-bottom: 20px;
         }
-        .projects, .achievements {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .project-card, .achievement-card {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s;
-        }
-        .project-card:hover, .achievement-card:hover {
-            transform: translateY(-5px);
-        }
-        .project-card h3, .achievement-card h3 {
-            margin-top: 0;
-        }
-        .project-card p, .achievement-card p {
-            color: #555;
-        }
-        footer {
-            background-color: #1abc9c;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
-        }
-        footer p {
-            margin: 0;
+        .projects, .skills {
+            display: none;
         }
     </style>
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.container > section').forEach(section => {
+                section.style.display = 'none';
+            });
+            // Show selected section
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
 </head>
-<body>
+<body onload="showSection('about')">
 
 <header>
-    <h1>Welcome to my Portfolio</h1>
+    <h1>Harini's Portfolio</h1>
 </header>
 
 <nav>
-    <a href="#about">About Me</a>
-    <a href="#education">Education</a>
-    <a href="#projects">Projects</a>
-    <a href="#achievements">Achievements</a>
-    <a href="#skills">Skills</a>
+    <a href="javascript:void(0);" onclick="showSection('about')">About Me</a>
+    <a href="javascript:void(0);" onclick="showSection('education')">Education</a>
+    <a href="javascript:void(0);" onclick="showSection('projects')">Projects</a>
+    <a href="javascript:void(0);" onclick="showSection('skills')">Skills</a>
 </nav>
 
 <div class="container">
     <section id="about">
         <h2 class="section-title">About Me</h2>
-        <p>Hello! I'm Harini, a college student passionate about data science and data analysis. I love exploring data, finding insights, and solving problems using statistical and machine learning techniques. Below are some of the projects I've worked on.</p>
+        <p>Hello! I'm Harini, a college student passionate about data science and data analysis. I love exploring data, finding insights, and solving problems using statistical and machine learning techniques.</p>
     </section>
 
     <section id="education">
         <h2 class="section-title">Education</h2>
         <p><strong>Anna University-UCE-BIT Campus</strong> - Chennai, India</p>
-        <p><em>Bachelor of Technology in Information Technology</em> - Graduating in 2024</p>
+        <p><em>Bachelor of Technology in Computer Science and Engineering</em> - Graduating in 2024</p>
     </section>
 
     <section id="projects">
         <h2 class="section-title">Projects</h2>
-        <div class="projects">
-            <div class="project-card">
-                <h3>Data Science Project 1</h3>
-                <p>Description: A machine learning project where I built a predictive model to forecast student performance based on various academic and demographic factors.</p>
-            </div>
-            <div class="project-card">
-                <h3>Data Science Project 2</h3>
-                <p>Description: A data visualization project where I analyzed a large dataset and created interactive dashboards to visualize key trends and patterns in sales data.</p>
-            </div>
-            <div class="project-card">
-                <h3>Data Analysis Project 1</h3>
-                <p>Description: Conducted an exploratory data analysis on a dataset of customer reviews to identify sentiment trends and key topics of discussion.</p>
-            </div>
-            <div class="project-card">
-                <h3>Data Analysis Project 2</h3>
-                <p>Description: Performed a statistical analysis on a healthcare dataset to identify correlations between patient characteristics and treatment outcomes.</p>
-            </div>
+        <div>
+            <h3>Data Science Project 1</h3>
+            <p>Description: A machine learning project where I built a predictive model to forecast student performance based on various academic and demographic factors.</p>
+        </div>
+        <div>
+            <h3>Data Science Project 2</h3>
+            <p>Description: A data visualization project where I analyzed a large dataset and created interactive dashboards to visualize key trends and patterns in sales data.</p>
+        </div>
+        <div>
+            <h3>Data Analysis Project 1</h3>
+            <p>Description: Conducted an exploratory data analysis on a dataset of customer reviews to identify sentiment trends and key topics of discussion.</p>
+        </div>
+        <div>
+            <h3>Data Analysis Project 2</h3>
+            <p>Description: Performed a statistical analysis on a healthcare dataset to identify correlations between patient characteristics and treatment outcomes.</p>
         </div>
     </section>
 
