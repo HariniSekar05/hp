@@ -9,15 +9,15 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to right, #f9f9f9, #e0e0e0);
-            color: #333;
+            background: #f1f3f4; /* Light gray background */
+            color: #202124; /* Dark text for contrast */
         }
         header {
-            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            background: linear-gradient(to right, #ff6f61, #ff9a8b); /* Vibrant coral gradient */
             color: white;
             padding: 15px 20px;
             text-align: center;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
         }
         header h1 {
             margin: 0;
@@ -30,7 +30,7 @@
             margin: 0;
             display: flex;
             justify-content: center;
-            background-color: #333;
+            background-color: #ff9a8b; /* Coral background */
         }
         nav ul li {
             margin: 0 10px;
@@ -44,64 +44,47 @@
             border-radius: 5px;
         }
         nav ul li a:hover {
-            background-color: #feb47b;
-            color: #333;
+            background-color: #ff6f61; /* Darker coral on hover */
+            color: #202124;
         }
         main {
             max-width: 1000px;
             margin: 30px auto;
             padding: 20px;
-            background-color: white;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff; /* White background for content */
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
             border-radius: 10px;
         }
         main h2 {
-            color: #ff7e5f;
+            color: #ff6f61; /* Coral for headings */
             margin-top: 0;
             font-size: 2em;
         }
         main p {
             line-height: 1.6;
-            color: #555;
+            color: #202124; /* Dark text for readability */
         }
         main a {
-            color: #ff7e5f;
+            color: #ff6f61; /* Coral links */
             text-decoration: none;
             font-weight: bold;
             border-bottom: 2px solid transparent;
             transition: color 0.3s, border-bottom-color 0.3s;
         }
         main a:hover {
-            color: #d9534f;
-            border-bottom-color: #d9534f;
-        }
-        .section-header {
-            background: linear-gradient(to right, #36d1dc, #5b86e5);
-            color: white;
-            padding: 15px 20px;
-            margin-top: 30px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        .section-header h2 {
-            margin: 0;
-            font-size: 2em;
-            font-weight: 600;
-        }
-        .section-header p {
-            margin: 10px 0 0;
-            color: #f1f1f1;
-            line-height: 1.5;
+            color: #ff9a8b; /* Lighter coral on hover */
+            border-bottom-color: #ff9a8b;
         }
         footer {
             text-align: center;
-            padding: 15px;
-            background: linear-gradient(to right, #333, #555);
-            color: white;
+            padding: 5px; /* Small padding */
+            background: #f1f3f4; /* Light gray background */
+            color: #202124; /* Dark text */
             position: fixed;
             width: 100%;
             bottom: 0;
-            box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 0.7em; /* Smaller font size */
+            box-shadow: 0px -4px 12px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
@@ -110,23 +93,29 @@
         <h1>Welcome to My Website</h1>
         <nav>
             <ul>
+                <li><a href="https://harinisekar05.github.io/hp">Home</a></li>
                 <li><a href="https://harinisekar05.github.io/hp/Portfolio.html">Portfolio</a></li>
-                <li><a href="https://harinisekar05.github.io/hp/TO-DO List/index.html">To-Do List</a></li> <!-- New To-Do List Link -->
+                <li><a href="https://harinisekar05.github.io/hp/TO-DO List/index.html">To-Do List</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <h2>Index of Full Stack Web Development Laboratory Exercises</h2>
-        <p>This page serves as an index for my Full Stack Web Development Laboratory exercises. Here, you'll find various projects and exercises that showcase my skills and knowledge in web development. The exercises cover different aspects of full-stack development, including front-end technologies like HTML, CSS, and JavaScript, as well as back-end technologies such as Node.js and databases.</p>
+    <main id="home">
+        <h2>Home</h2>
+        <p>Welcome to my Full Stack Web Development Laboratory. This website showcases various projects and exercises that I have completed as part of my coursework. Here you will find detailed information about each project, the technologies used, and the challenges faced.</p>
+        <p>Access the <a href="https://harinisekar05.github.io/hp">Portfolio</a> and <a href="#todo">To-Do List</a> sections for further details.</p>
+    </main>
+
+    <main id="portfolio">
+        <h2>Portfolio</h2>
         <p>Explore the <a href="https://harinisekar05.github.io/hp/Portfolio.html">portfolio</a> for a detailed view of each exercise and project, including their objectives, challenges, and outcomes.</p>
     </main>
 
-    <div class="section-header">
+    <main id="todo">
         <h2>To-Do List Application</h2>
-        <p>This is a simple web-based to-do list application that allows users to add, view, and manage their tasks. The to-do list is a part of my Full Stack Web Development exercises and demonstrates basic CRUD operations using HTML, CSS, and JavaScript. You can access the application from the "To-Do List" link in the navigation menu.</p>
+        <p>This is a simple web-based to-do list application that allows users to add, view, and manage their tasks. The to-do list is a part of my Full Stack Web Development exercises and demonstrates basic CRUD operations using HTML, CSS, and JavaScript.</p>
         <p>Explore the <a href="https://harinisekar05.github.io/hp/TO-DO List/index.html">TO-DO List</a> for a detailed view of each exercise and project, including their objectives, challenges, and outcomes.</p>
-    </div>
+    </main>
 
     <footer>
         <p>&copy; 2024 All rights reserved.</p>
