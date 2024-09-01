@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+      
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e0f7fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+        }
+
+        .main-container {
+            display: flex;
+            width: 800px;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .input-container {
+            padding: 30px;
+            width: 60%;
+            background-color: #ffffff;
+        }
+
+        .sidebar {
+            width: 40%;
+            background-color: #006064;
+            color: white;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .sidebar h2 {
+            margin-top: 0;
+            border-bottom: 2px solid #004d40;
+            padding-bottom: 10px;
+        }
+
+        .todo-container h1 {
+            margin: 0 0 20px;
+            color: #004d40;
+        }
+
+        #todo-input {
+            width: calc(100% - 20px);
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 2px solid #004d40;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #004d40;
+            background-color: #e0f2f1;
+        }
+
+        #add-btn, #save-btn {
+            width: 48%;
+            padding: 15px;
+            border: none;
+            background-color: #00796b;
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-right: 4%;
+        }
+
+        #add-btn:hover, #save-btn:hover {
+            background-color: #004d40;
+        }
+
+        #save-btn {
+            background-color: #0288d1;
+            margin-right: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 15px;
+            margin-bottom: 10px;
+            background-color: #004d40;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .delete-btn {
+            background-color: #d32f2f;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .delete-btn:hover {
+            background-color: #b71c1c;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Input Section -->
+        <div class="input-container">
+            <h1>Enter the TO-DO List</h1>
+            <input type="text" id="todo-input" placeholder="Enter a new task">
+            <button id="add-btn">Add</button>
+            <button id="save-btn">Save & View</button>
+        </div>
+        
+        <!-- Sidebar with To-Do List -->
+        <div class="sidebar">
+            <h2>To-Do List</h2>
+            <ul id="todo-list"></ul>
+        </div>
+    </div>
+
+    <script>
+        // Function to add a new to-do item
+        document.getElementById('add-btn').addEventListener('click', function() {
+            const task = document.getElementById('todo-input').value;
+
+            if (task.trim() === "") {
+                alert("Please enter a task!");
+                return;
+            }
+
+            const li = document.createElement('li');
+            li.textContent = task;
+
+            // Create delete button
+            const deleteBtn = document.createElement('button');
+            deleteBtn.textContent = 'Delete';
+            deleteBtn.classList.add('delete-btn');
+            deleteBtn.addEventListener('click', function() {
+                li.remove();
+            });
+
+            li.appendChild(deleteBtn);
+            document.getElementById('todo-list').appendChild(li);
+
+            // Clear the input field
+            document.getElementById('todo-input').value = '';
+        });
+
+        // Function to save the to-do list and navigate to the saved list page
+        document.getElementById('save-btn').addEventListener('click', function() {
+            const todos = [];
+            const listItems = document.querySelectorAll('#todo-list li');
+
+            listItems.forEach(item => {
+                todos.push(item.textContent.replace('Delete', '').trim());
+            });
+
+            localStorage.setItem('todos', JSON.stringify(todos));
+
+            // Redirect to the saved list page
+            window.location.href = 'saved.html';
+        });
+    </script>
+</body>
+</html>
