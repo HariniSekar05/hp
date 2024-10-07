@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microblogging App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Alert Box -->
+    <div id="alert-box" class="alert" style="display: none;"></div>
+
+    <!-- Login Page -->
+    <div id="login-page" class="page">
+        <h2>Login or Signup</h2>
+        <input type="text" id="username" placeholder="Enter your username">
+        <button onclick="signup()">Login</button>
+    </div>
+
+    <!-- Home Page -->
+    <div id="home-page" class="page" style="display: none;">
+        <h2>Welcome, <span id="user-id"></span> 
+            (<span id="follower-count"></span> Followers, <span id="following-count"></span> Following)</h2>
+        <button onclick="logout()">Logout</button>
+        <button onclick="showPage('create-post-page')">Create Post</button>
+        <button onclick="showPage('follow-users')">Follow Users</button>
+        <div id="delete-account-section">
+            <button id="delete-account-button" onclick="deleteAccount()">Delete Account</button>
+        </div>
+        <div id="feed"></div>
+    </div>
+
+    <!-- Create Post Page -->
+    <div id="create-post-page" class="page" style="display: none;">
+        <h2>Create a Post</h2>
+        <textarea id="post-text" placeholder="Write something..."></textarea>
+        <input type="file" id="post-image">
+        <button onclick="createPost()">Post</button>
+        <button onclick="showPage('home-page')">Back to Feed</button>
+    </div>
+
+    <!-- Follow Users Page -->
+    <div id="follow-users" class="page" style="display: none;">
+        <h2>Follow Users</h2>
+        <div id="follow-users-list"></div>
+        <button onclick="showPage('home-page')">Back to Feed</button>
+    </div>
+
+    <!-- Comments Page -->
+    <div id="comments" class="page" style="display: none;">
+        <h2>Comments</h2>
+        <div id="comment-section"></div>
+        <input type="text" id="new-comment" placeholder="Add a comment...">
+        <button onclick="addComment(currentPostId)">Submit Comment</button>
+        <button onclick="showPage('home-page')">Back to Feed</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
