@@ -1,86 +1,123 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, #FF6F61, #6FA3EF); /* Vibrant gradient background */
+    color: #333;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .page {
-    width: 400px;
+    display: none;
     padding: 20px;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.95); /* Light background for pages */
+    margin: 20px auto;
+    max-width: 800px;
 }
 
-input, textarea {
-    width: 100%;
-    margin-bottom: 10px;
+#alert-box {
+    display: none;
     padding: 10px;
-    font-size: 16px;
-}
-
-button {
-    padding: 10px 20px;
-    margin: 10px 0;
-    font-size: 14px;
-    cursor: pointer;
-    background-color: #4CAF50;
+    margin-bottom: 20px;
+    border-radius: 5px;
     color: white;
-    border: none;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    text-align: center;
+    font-weight: bold;
 }
 
-button:hover {
-    background-color: #45a049;
-}
-
-.alert {
-    position: fixed;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px;
-    border-radius: 4px;
-    display: inline-block;
-    z-index: 1000;
+.alert.success {
+    background-color: #28a745; /* Green for success messages */
 }
 
 .alert.error {
-    background-color: #f44336;
+    background-color: #dc3545; /* Red for error messages */
+}
+
+#user-id {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 5px; /* Smaller padding for text fields */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 14px; /* Smaller font size */
+    transition: border-color 0.3s; /* Transition for border color */
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #6FA3EF; /* Change border color on focus */
+}
+
+button {
+    background-color: #FF6F61; /* Attractive button color */
+    border: none;
+    color: white;
+    padding: 8px 12px; /* Smaller padding for buttons */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px; /* Smaller font size */
+    margin: 5px 2px; /* Spacing between buttons */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Animation on hover */
+}
+
+button:hover {
+    background-color: #FF4D4D; /* Darker shade on hover */
+    transform: scale(1.05); /* Slight scale effect */
 }
 
 .post {
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
     margin-bottom: 15px;
+    background-color: #fff; /* White background for posts */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-h4 {
+.post h4 {
     margin: 0;
+    font-size: 18px;
+    color: #333;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+.comments {
+    margin-top: 10px;
 }
 
-#delete-account-button {
-    background-color: #f44336;
+.comment {
+    border-top: 1px solid #ddd;
+    padding: 5px 0;
 }
 
-#delete-account-button:hover {
-    background-color: #d32f2f;
+.comment strong {
+    color: #FF6F61; /* Color for comment username */
 }
 
-input[type="file"] {
-    margin: 10px 0;
+#follow-users-list {
+    margin-top: 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    button {
+        width: 100%; /* Full width for buttons on small screens */
+    }
+
+    .page {
+        padding: 10px; /* Reduced padding for smaller screens */
+    }
 }
