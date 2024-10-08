@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Restaurants - Food Delivery</title>
+</head>
+<body>
+
+<header>
+    <h1>Food Delivery Service</h1>
+</header>
+
+<div id="userInfo" style="display: none; text-align: center;">
+    <!-- User information will be displayed here after login -->
+</div>
+
+<div class="restaurants">
+    <h2>Available Restaurants</h2>
+    <div class="restaurant-list" id="restaurantList">
+        <!-- Restaurant cards will be dynamically inserted here -->
+    </div>
+</div>
+
+<div id="menuContainer" style="display: none;">
+    <h3>Menu</h3>
+    <div id="menuItems"></div>
+    <button onclick="closeMenu()">Close</button>
+</div>
+
+<!-- Cart Section -->
+<div id="cartContainer">
+    <h3>Your Cart</h3>
+    <div id="cartItems"></div>
+    <p id="totalAmount"></p>
+    <button onclick="showOrderSummary()">Checkout</button>
+</div>
+
+<!-- Order Summary Section -->
+<div id="orderSummaryContainer" style="display: none;">
+    <h3>Order Summary</h3>
+    <div id="orderSummary"></div>
+    <button onclick="confirmOrder()">Confirm Order</button>
+</div>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Food Delivery Service. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
