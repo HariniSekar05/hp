@@ -1,0 +1,161 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Light grey background */
+}
+
+header {
+    background: linear-gradient(135deg, #ff6b6b, #ff3d3d); /* Gradient header */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Container Styles */
+.login-container, .restaurants, #cartContainer, #orderSummaryContainer {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff; /* White background for content areas */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h2, h3, h4 {
+    color: #333;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+input:focus {
+    border-color: #ff6b6b; /* Change border color on focus */
+}
+
+/* Button Styles */
+button {
+    padding: 10px 15px;
+    background-color: #ff4747; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #e63939; /* Button hover color */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Restaurant List Styles */
+.restaurant-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.restaurant-card {
+    background: #ffecb3; /* Light yellow background for restaurant cards */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    flex: 1 0 30%; /* Allows 3 items per row */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.restaurant-card:hover {
+    transform: scale(1.02); /* Hover effect for restaurant cards */
+}
+
+/* Menu Container Styles */
+.menu-container {
+    margin-top: 20px;
+    padding: 10px;
+    background: #f9fbe7; /* Light green background */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Menu Item Styles */
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* Separator for menu items */
+}
+
+.menu-item:last-child {
+    border-bottom: none; /* Remove last border */
+}
+
+.menu-item img {
+    width: 60px; /* Small size for item images */
+    height: 60px;
+    border-radius: 5px;
+}
+
+/* Cart Styles */
+#cartItems {
+    margin-bottom: 15px;
+}
+
+#totalAmount {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ff4747;
+}
+
+/* Order Summary Styles */
+#orderSummary {
+    margin-bottom: 15px;
+}
+
+/* Styles for small buttons */
+.small-button {
+    padding: 5px 10px; /* Smaller padding for smaller buttons */
+    background-color: #ff4747; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px; /* Smaller font size */
+    transition: background-color 0.3s;
+}
+
+.small-button:hover {
+    background-color: #e63939; /* Button hover color */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .restaurant-card {
+        flex: 1 0 100%; /* Stacks restaurant cards on small screens */
+    }
+}
