@@ -3,31 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classifieds App</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Classifieds Web Application</title>
 </head>
 <body>
     <header>
-        <h1>Classifieds Marketplace</h1>
+        <h1>Classifieds App</h1>
+        <div id="user-info"></div>
+        <button id="logout-btn" style="display:none;">Logout</button>
     </header>
+    <main>
+        <section id="auth-section">
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <button id="register-btn">Register</button></p>
+        </section>
 
-    <form id="postForm">
-        <h2>Post a Product</h2>
-        <input type="text" name="productName" placeholder="Product Name" required>
-        <input type="text" name="description" placeholder="Description" required>
-        <input type="number" name="price" placeholder="Price" required>
-        <input type="text" name="location" placeholder="Location" required>
-        <input type="text" name="mobile" placeholder="Contact Number" required>
-        <button type="submit">Post Product</button>
+        <section id="register-section" style="display:none;">
+            <h2>Register</h2>
+            <form id="register-form">
+                <input type="text" id="new-username" placeholder="Username" required>
+                <input type="password" id="new-password" placeholder="Password" required>
+                <button type="submit">Register</button>
+            </form>
+            <p>Already have an account? <button id="back-to-login-btn">Back to Login</button></p>
+        </section>
+
+        <section id="ad-form" style="display:none;">
+    <h2>Post an Ad</h2>
+    <form id="form">
+        <input type="text" id="title" placeholder="Ad Title" required>
+        <input type="text" id="description" placeholder="Description" required>
+        <input type="text" id="price" placeholder="Price" required>
+        <input type="file" id="image" accept="image/*" required>
+        <input type="text" id="location" placeholder="Your Location" required>
+        <input type="text" id="mobile" placeholder="Your Mobile Number" required>
+        <button type="submit">Submit Ad</button>
     </form>
+</section>
 
-    <ul id="productList"></ul>
 
-    <div id="order-summary" style="display: none;">
-        <h2>Order Summary</h2>
-        <div id="summary-details"></div>
-    </div>
+        <section id="ads" style="display:none;">
+            <h2>Available Ads</h2>
+            <ul id="ad-list"></ul>
+        </section>
 
+        <section id="order-summary" style="display:none;">
+            <h2>Order Summary</h2>
+            <div id="summary-details"></div>
+            <button id="close-summary-btn">Close Summary</button>
+        </section>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
