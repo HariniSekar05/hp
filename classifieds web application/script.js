@@ -1,17 +1,12 @@
-// Initialize users and ads in local storage if not present
+// Initialize users in local storage if not present
 if (!localStorage.getItem('users')) {
     localStorage.setItem('users', JSON.stringify([]));
 }
 
+// Initial setup for ads
 if (!localStorage.getItem('ads')) {
     localStorage.setItem('ads', JSON.stringify([]));
 }
-
-// Load the appropriate page on refresh
-window.onload = function() {
-    const currentPage = localStorage.getItem('currentPage') || 'login';
-    loadPage(currentPage);
-};
 
 document.getElementById('login-form').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -19,24 +14,21 @@ document.getElementById('login-form').addEventListener('submit', function(e) {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     
-    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const users = JSON.parse(localStorage.getItem('users'));
     const user = users.find(u => u.username === username && u.password === password);
-    
-    // Debugging output
-    console.log('Logging in with:', { username, password });
-    console.log('Registered users:', users);
     
     if (user) {
         localStorage.setItem('loggedInUser', username);
         loadUserDashboard();
     } else {
-        alert('Invalid login credentials. Please try again.');
+        alert('Invalid login credentials');
     }
 });
 
 // Register button logic
 document.getElementById('register-btn').addEventListener('click', function() {
-    loadPage('register');
+    document.getElementById('auth-section').style.display = 'none';
+    document.getElementById('register-section').style.display = 'block';
 });
 
 document.getElementById('register-form').addEventListener('submit', function(e) {
@@ -54,12 +46,15 @@ document.getElementById('register-form').addEventListener('submit', function(e) 
         users.push({ username: newUsername, password: newPassword });
         localStorage.setItem('users', JSON.stringify(users));
         alert('Registration successful! You can now log in.');
-        loadPage('login');
+        document.getElementById('register-section').style.display = 'none';
+        document.getElementById('auth-section').style.display = 'block';
+        document.getElementById('register-form').reset();
     }
 });
 
 document.getElementById('back-to-login-btn').addEventListener('click', function() {
-    loadPage('login');
+    document.getElementById('register-section').style.display = 'none';
+    document.getElementById('auth-section').style.display = 'block';
 });
 
 document.getElementById('form').addEventListener('submit', function(e) {
@@ -70,8 +65,7 @@ document.getElementById('form').addEventListener('submit', function(e) {
     const price = document.getElementById('price').value;
     const imageInput = document.getElementById('image');
     const location = document.getElementById('location').value;
-    const mobile = document.getElementById('mobile').value;
-
+    
     // Create a FileReader to read the uploaded image
     const reader = new FileReader();
     reader.onload = function(event) {
@@ -83,7 +77,7 @@ document.getElementById('form').addEventListener('submit', function(e) {
         // Get the current date and time
         const currentDateTime = new Date().toLocaleString();
         
-        ads.push({ title, description, price, username, image: imageDataUrl, location, mobile, dateTime: currentDateTime });
+        ads.push({ title, description, price, username, image: imageDataUrl, location, dateTime: currentDateTime });
         localStorage.setItem('ads', JSON.stringify(ads));
 
         loadAds();
@@ -98,30 +92,27 @@ document.getElementById('form').addEventListener('submit', function(e) {
 
 document.getElementById('logout-btn').addEventListener('click', function() {
     localStorage.removeItem('loggedInUser');
-    loadPage('login');
+    loadLoginPage();
 });
 
-function loadPage(page) {
-    localStorage.setItem('currentPage', page);
-    
-    // Hide all sections
-    document.getElementById('auth-section').style.display = 'none';
+function loadLoginPage() {
+    document.getElementById('auth-section').style.display = 'block';
     document.getElementById('register-section').style.display = 'none';
     document.getElementById('ad-form').style.display = 'none';
     document.getElementById('ads').style.display = 'none';
-    
-    // Show the requested section
-    if (page === 'login') {
-        document.getElementById('auth-section').style.display = 'block';
-    } else if (page === 'register') {
-        document.getElementById('register-section').style.display = 'block';
-    } else if (page === 'dashboard') {
-        document.getElementById('ad-form').style.display = 'block';
-        document.getElementById('ads').style.display = 'block';
-        document.getElementById('user-info').innerText = `Logged in as: ${localStorage.getItem('loggedInUser')}`;
-        document.getElementById('logout-btn').style.display = 'inline-block';
-        loadAds();
-    }
+    document.getElementById('user-info').innerText = '';
+    document.getElementById('logout-btn').style.display = 'none';
+    document.getElementById('order-summary').style.display = 'none';
+}
+
+function loadUserDashboard() {
+    document.getElementById('auth-section').style.display = 'none';
+    document.getElementById('register-section').style.display = 'none';
+    document.getElementById('ad-form').style.display = 'block';
+    document.getElementById('ads').style.display = 'block';
+    document.getElementById('user-info').innerText = `Logged in as: ${localStorage.getItem('loggedInUser')}`;
+    document.getElementById('logout-btn').style.display = 'inline-block';
+    loadAds();
 }
 
 function loadAds() {
@@ -137,8 +128,7 @@ function loadAds() {
             ${ad.description}<br>
             <em>Price: ₹${ad.price}</em><br>
             <small>Posted by: ${ad.username} on ${ad.dateTime}</small><br>
-            <small>Location: ${ad.location}</small><br>
-            <small>Mobile: ${ad.mobile}</small>
+            <small>Location: ${ad.location}</small>
         `;
         
         const buyButton = document.createElement('button');
@@ -173,9 +163,7 @@ function getDeliveryDetails(ad) {
             <strong>Price:</strong> ₹${ad.price}<br>
             <strong>Delivery Name:</strong> ${deliveryName}<br>
             <strong>Delivery Address:</strong> ${deliveryAddress}<br>
-            <strong>Phone:</strong> ${deliveryPhone}<br>
-            <strong>Posted User Mobile:</strong> ${ad.mobile}<br>
-            <strong>Location:</strong> ${ad.location}
+            <strong>Phone:</strong> ${deliveryPhone}
         `;
 
         document.getElementById('order-summary').style.display = 'block';
@@ -189,4 +177,4 @@ document.getElementById('close-summary-btn').addEventListener('click', function(
 });
 
 // Load the login page on initial load
-loadPage('login');
+loadLoginPage();
