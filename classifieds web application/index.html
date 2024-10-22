@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classifieds App</title>
+    <title>Seller's Market</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Classifieds App</h1>
+        <h1>Seller's Market</h1>
         <div id="user-info"></div>
         <button id="logout-btn" style="display:none;">Logout</button>
+        <button id="sell-product-btn" style="display:none;">Sell Product</button>
     </header>
     <main>
         <section id="auth-section">
@@ -32,20 +33,6 @@
             </form>
             <p>Already have an account? <button id="back-to-login-btn">Back to Login</button></p>
         </section>
-
-        <section id="ad-form" style="display:none;">
-    <h2>Post an Ad</h2>
-    <form id="form">
-        <input type="text" id="title" placeholder="Ad Title" required>
-        <input type="text" id="description" placeholder="Description" required>
-        <input type="text" id="price" placeholder="Price" required>
-        <input type="file" id="image" accept="image/*" required>
-        <input type="text" id="location" placeholder="Your Location" required>
-        <input type="text" id="mobile" placeholder="Your Mobile Number" required>
-        <button type="submit">Submit Ad</button>
-    </form>
-</section>
-
 
         <section id="ads" style="display:none;">
             <h2>Available Ads</h2>
