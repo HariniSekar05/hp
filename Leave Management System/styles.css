@@ -1,0 +1,212 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Body */
+body {
+  background: linear-gradient(135deg, #8e44ad, #3498db);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Header */
+h1 {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ecf0f1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input, select, textarea {
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+  transform: scale(1.02);
+}
+
+button {
+  padding: 14px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(to right, #5a0ea1, #1f63cc);
+  transform: scale(1.05);
+}
+
+button:disabled {
+  background: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.7);
+  cursor: not-allowed;
+}
+
+/* Hidden Class */
+.hidden {
+  display: none;
+}
+
+/* Employee Details */
+#employeeDetailsSection p {
+  font-size: 16px;
+  color: #dcdde1;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+#employeeDetailsSection button {
+  margin-top: 20px;
+  background: linear-gradient(to right, #2ecc71, #27ae60);
+}
+
+#employeeDetailsSection button:hover {
+  background: linear-gradient(to right, #28a745, #218838);
+}
+
+/* Manager Section */
+#managerSection table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#managerSection table th, #managerSection table td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+#managerSection table th {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+#managerSection table td button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(to right, #f39c12, #f1c40f);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#managerSection table td button:hover {
+  background: linear-gradient(to right, #d4880b, #e2b509);
+  transform: scale(1.1);
+}
+
+/* Apply Leave Section */
+#leaveApplicationSection form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+/* Logout Button */
+#logoutEmployee, #managerSection button {
+  background: linear-gradient(to right, #e74c3c, #c0392b);
+  margin-top: 20px;
+  color: #ffffff;
+}
+
+#logoutEmployee:hover, #managerSection button:hover {
+  background: linear-gradient(to right, #d44d39, #a93226);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  form {
+    gap: 15px;
+  }
+
+  button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  #managerSection table th, #managerSection table td {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  #managerSection table th, #managerSection table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
