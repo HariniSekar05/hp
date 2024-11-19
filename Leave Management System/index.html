@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leave Management System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Login Section -->
+    <div id="loginSection">
+      <h1>Welcome to INNOWAVE Ltd;</h1>
+      <h1>Login</h1>
+      <form id="loginForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter Your Name" required>
+
+        <label for="userId">Employee/Manager ID:</label>
+        <input type="text" id="userId" placeholder="Enter ID" required>
+
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <!-- Employee Section: Leave Status Message -->
+    <div id="leaveStatusMessage" class="hidden"></div>
+
+    <!-- Employee Details Section -->
+    <div id="employeeDetailsSection" class="hidden">
+      <h1>Employee Details</h1>
+      <p><strong>Name:</strong> <span id="empName"></span></p>
+      <p><strong>Father's Name:</strong> <span id="empFathersName"></span></p>
+      <p><strong>Mother's Name:</strong> <span id="empMothersName"></span></p>
+      <p><strong>Residential Address:</strong> <span id="empAddress"></span></p>
+      <p><strong>Designation:</strong> <span id="empDesignation"></span></p>
+      <p><strong>Working Hours:</strong> <span id="empWorkingHours"></span></p>
+      <p><strong>Mobile Number:</strong> <span id="empMobile"></span></p>
+      <p><strong>Experience:</strong> <span id="empExperience"></span></p>
+      <p><strong>Available Leaves:</strong> <span id="availableLeaves"></span></p>
+      <button id="proceedToLeave">Apply for Leave</button>
+      <button id="logoutEmployee">Logout</button>
+    </div>
+
+    <!-- Leave Application Section -->
+    <div id="leaveApplicationSection" class="hidden">
+      <h1>Apply for Leave</h1>
+      <form id="leaveForm">
+        <label for="leaveType">Leave Type:</label>
+        <select id="leaveType" required>
+          <option value="" disabled selected>Select Leave Type</option>
+          <option value="medical">Medical Leave</option>
+          <option value="vacation">Vacation Leave</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="leaveDays">Number of Days:</label>
+        <input type="number" id="leaveDays" min="1" placeholder="Enter Number of Days" required>
+
+        <label for="leaveReason">Reason:</label>
+        <textarea id="leaveReason" placeholder="Enter Reason" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+      <button id="backToDetails">Back</button>
+    </div>
+
+    <!-- Manager View Section -->
+    <div id="managerSection" class="hidden">
+      <h1>Leave Applications</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Employee Name</th>
+            <th>Leave Type</th>
+            <th>Days</th>
+            <th>Reason</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="applicationsTable"></tbody>
+      </table>
+      <button id="logoutManager">Logout</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
