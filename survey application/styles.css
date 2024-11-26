@@ -1,0 +1,137 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(120deg, #f6d365, #fda085);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.survey-container {
+  width: 90%;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+/* Header Section */
+header {
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+header p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Progress Bar */
+.progress-bar-container {
+  width: 100%;
+  background: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 20px 0;
+  height: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #4caf50;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Question Section */
+form .question h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+form label {
+  display: block;
+  text-align: left;
+  margin: 5px 0;
+  color: #555;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:focus {
+  outline: none;
+}
+
+#backBtn {
+  background: #f44336;
+  color: #fff;
+}
+
+#nextBtn {
+  background: #2196f3;
+  color: #fff;
+}
+
+#submitBtn,
+#closeSurveyBtn,
+#backToSurveyBtn {
+  background: #4caf50;
+  color: #fff;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Thank You and Success Messages */
+.thank-you,
+.success-message {
+  text-align: center;
+  padding: 20px;
+}
+
+.thank-you h2,
+.success-message h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #4caf50;
+}
+
+.thank-you p,
+.success-message p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.thank-you button,
+.success-message button {
+  margin-top: 20px;
+}
