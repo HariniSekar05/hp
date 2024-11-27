@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,146 +6,107 @@
     <title>Full Stack Web Development Laboratory Exercises</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: #f1f3f4;
-            color: #202124;
+            background: #f1f3f4; /* Light gray background */
+            color: #202124; /* Dark text for contrast */
+            scroll-behavior: smooth;
         }
         header {
-            background: linear-gradient(135deg, #ff6f61, #ff9a8b);
-            color: white;
-            padding: 20px 0;
+            position: relative;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(to right, #ff7eb3, #ff758c);
+            color: #fff;
+            padding: 50px 20px 80px;
+            clip-path: ellipse(120% 80% at 50% -20%);
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
         }
         header h1 {
             margin: 0;
-            font-size: 3em;
-            font-weight: 800;
-            letter-spacing: 1px;
+            font-size: 2.5em;
+            font-weight: 700;
         }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            background-color: #ff9a8b;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            padding: 14px 24px;
+        .hero-btn {
             display: inline-block;
-            font-size: 1.2em;
-            transition: all 0.3s ease;
-            border-radius: 30px;
-        }
-        nav ul li a:hover {
-            background-color: white;
-            color: #ff6f61;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        main {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 30px;
+            margin-top: 20px;
+            padding: 10px 25px;
             background-color: #fff;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
-        }
-        main h2 {
-            color: #ff6f61;
-            font-size: 2.2em;
-            margin-bottom: 15px;
-        }
-        main p {
-            line-height: 1.8;
-            font-size: 1.1em;
-        }
-        main a {
-            color: #ff6f61;
+            color: #ff7eb3;
             font-weight: bold;
+            font-size: 1rem;
+            text-transform: uppercase;
             text-decoration: none;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.3s ease, color 0.3s ease;
+            border-radius: 25px;
+            transition: all 0.3s;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for prominence */
         }
-        main a:hover {
-            color: #ff9a8b;
-            border-bottom-color: #ff9a8b;
+        .hero-btn:hover {
+            background-color: #ff3e73;
+            color: #fff;
+        }
+        #links-section {
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: center;
+        }
+        #links-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        #links-section ul li {
+            display: inline-block;
+            margin: 10px;
+        }
+        #links-section ul li a {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #ff7eb3;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        #links-section ul li a:hover {
+            background-color: #ff3e73;
+            transform: scale(1.1);
         }
         footer {
-            background-color: #202124;
-            color: white;
             text-align: center;
-            padding: 15px 0;
-            font-size: 0.85em;
+            padding: 10px;
+            background: #f1f3f4; /* Light gray background */
+            color: #202124; /* Dark text */
             position: fixed;
             width: 100%;
             bottom: 0;
-            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
-        }
-        footer p {
-            margin: 0;
+            font-size: 0.8em;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Website - HARINIPRIYA S (810022205086)</h1>
-        <nav>
-            <ul>
-                <li><a href="https://harinisekar05.github.io/hp">Home</a></li>
-                <li><a href="https://harinisekar05.github.io/hp/Portfolio.html">Portfolio</a></li>
-                <li><a href="https://harinisekar05.github.io/hp/TO-DO List/login.html">To-Do List</a></li>
-                <li><a href="https://harinisekar05.github.io/hp/micorblogging-app/index.html">Microblogging App</a></li>
-                <li><a href="https://harinisekar05.github.io/hp/food delivery website/login.html">Food Delivery</a></li>
-                <li><a href="https://harinisekar05.github.io/hp/classifieds web application/index.html">Classifieds</a></li>
-            </ul>
-        </nav>
+        <h1>Welcome to My Website</h1>
+        <h3>HARINIPRIYA S (810022205086)</h3>
+        <a href="#links-section" class="hero-btn">Get Started</a>
     </header>
 
-    <main id="home">
-        <h2>Home</h2>
-        <p>Welcome to my Full Stack Web Development Laboratory. This website showcases various projects and exercises that I have completed as part of my coursework. Here you will find detailed information about each project, the technologies used, and the challenges faced.</p>
-        <p>Access the <a href="https://harinisekar05.github.io/hp">Portfolio (Ex-1)</a>, <a href="#todo">To-Do List (Ex-2)</a>, <a href="#microblogging">Microblogging App (Ex-3)</a>, <a href="#food delivery app">Food Delivery Website (Ex-4)</a>, and <a href="#classifieds">Classifieds (Ex-5)</a> sections for further details.</p>
-    </main>
-
-    <main id="portfolio">
-        <h2>Portfolio</h2>
-        <p>Explore the <a href="https://harinisekar05.github.io/hp/Portfolio.html">portfolio</a> for a detailed view of each exercise and project, including their objectives, challenges, and outcomes.</p>
-    </main>
-
-    <main id="todo">
-        <h2>To-Do List Application</h2>
-        <p>This is a simple web-based to-do list application that allows users to add, view, and manage their tasks. The to-do list is a part of my Full Stack Web Development exercises and demonstrates basic CRUD operations using HTML, CSS, and JavaScript.</p>
-        <p>Explore the <a href="https://harinisekar05.github.io/hp/TO-DO List/login.html">TO-DO List</a> for a detailed view of each exercise and project.</p>
-    </main>
-
-    <main id="microblogging">
-        <h2>Microblogging Application</h2>
-        <p>This is a simple web-based microblogging application that allows users to create, view, and manage their posts. Users can share text and images, follow other users, and engage with posts through likes and comments.</p>
-        <p>Explore the <a href="https://harinisekar05.github.io/hp/micorblogging-app/index.html">microblogging-app</a> for a detailed view of its functionalities.</p>
-    </main>
-
-    <main id="food delivery app">
-        <h2>Food Delivery Website</h2>
-        <p>This is a user-friendly food delivery website that allows customers to browse restaurants, order food, and get real-time updates. Users can search for dishes, customize orders, and leave reviews for restaurants and services.</p>
-        <p>Explore the <a href="https://harinisekar05.github.io/hp/food delivery website/login.html">food delivery website</a> for more details.</p>
-    </main>
-
-    <main id="classifieds">
-        <h2>Classifieds Application</h2>
-        <p>This is a user-friendly web-based classifieds application that allows users to buy and sell used products. Users can create listings, browse products, and communicate with sellers through the platform.</p>
-        <p>Explore the <a href="https://harinisekar05.github.io/hp/classifieds web application/index.html">classifieds-app</a> for its features.</p>
-    </main>
+    <section id="links-section">
+        <h2>Explore the Sections</h2>
+        <ul>
+            <li><a href="https://harinisekar05.github.io/hp">Home</a></li>
+            <li><a href="https://harinisekar05.github.io/hp/Portfolio.html">Portfolio</a></li>
+            <li><a href="https://harinisekar05.github.io/hp/TO-DO List/login.html">To-Do List</a></li>
+            <li><a href="https://harinisekar05.github.io/hp/micorblogging-app/index.html">Microblogging App</a></li>
+            <li><a href="https://harinisekar05.github.io/hp/food delivery website/login.html">Food Delivery Website</a></li>
+            <li><a href="https://harinisekar05.github.io/hp/classifieds web application/index.html">Buy and Sell App</a></li>
+            <li><a href="https://harinisekar05.github.io/hp/Leave Management System/index.html">Leave Management System</a></li>
+            <li><a href="https://harinisekar05.github.io/hp/project dashboard/index.html">Project Dashboard</a></li>
+            <li><a href="https://harinisekar05.github.io/hp/survey application/index.html">Survey Application</a></li>
+        </ul>
+    </section>
 
     <footer>
-        <p>&copy; 2024 Harinipriya S. All rights reserved.</p>
+        <p>&copy; 2024 Harinipriya. All rights reserved.</p>
     </footer>
 </body>
 </html>
